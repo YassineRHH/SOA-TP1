@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Coordonnées qui identifient ce projet Maven. -->
+    <groupId>tn.fss.soa</groupId>
+    <artifactId>tp1-xml</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Le code est compilé en Java 8 et les fichiers du projet sont encodés en UTF-8. -->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- L'API javax.xml (JAXP, XPath) est incluse dans le JDK :
+         aucune dépendance externe n'est nécessaire. -->
+    <dependencies>
+        <!-- JUnit est utilisé uniquement pour les tests, pas par l'application à l'exécution. -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+        <!-- FICHIER DE CONFIGURATION CENTRALE
+        Gestion des dépendances(bib)/Métadonnées du projet /Configuration de la compilation et du cycle de vie (Build)-->

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cinema>
+    <!-- Catalogue des films ; chaque identifiant peut être référencé par une séance. -->
+    <films>
+        <film id="F1" disponible="true">
+            <titre>The Dark Knight</titre>
+            <genre>Science-fiction</genre>
+            <annee>2008</annee>
+            <realisateur>Christopher Nolan</realisateur>
+        </film>
+        <film id="F2" disponible="true">
+            <titre>Spider-Man</titre>
+            <genre>Action</genre>
+            <annee>2002</annee>
+            <realisateur>Bong Joon-ho</realisateur>
+        </film>
+        <film id="F3" disponible="false">
+            <titre>The Godfather</titre>
+            <genre>Drame</genre>
+            <annee>1972</annee>
+            <realisateur>Francis Ford Coppola</realisateur>
+        </film>
+    </films>
+
+    <!-- Salles disponibles et leur capacité maximale. -->
+    <salles>
+        <salle numero="S1" capacite="120">
+            <nom>Salle Carthage</nom>
+        </salle>
+    </salles>
+
+    <!-- Une séance associe un film et une salle à une date et à un prix. -->
+    <seances>
+        <seance filmRef="F1" salleRef="S1">
+            <date>2026-11-02</date>
+            <prix>12.5</prix>
+        </seance>
+    </seances>
+</cinema>

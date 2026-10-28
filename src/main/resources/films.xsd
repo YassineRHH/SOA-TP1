@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?> <!--Déclaration XML (en-tête)-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <!-- Élément racine : les trois sections doivent apparaître dans cet ordre. -->
+    <xs:element name="cinema">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="films">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="film" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <!-- L'ordre des informations d'un film est imposé par cette séquence. -->
+                                    <xs:sequence>
+                                        <xs:element name="titre" type="xs:string"/>
+                                        <xs:element name="genre" type="xs:string"/>
+                                        <xs:element name="annee" type="xs:int"/>
+                                        <xs:element name="realisateur" type="xs:string"/>
+                                    </xs:sequence>
+                                    <!-- Chaque film doit avoir un identifiant et un indicateur de disponibilité. -->
+                                    <xs:attribute name="id" type="xs:string" use="required"/>
+                                    <xs:attribute name="disponible" type="xs:boolean" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="salles">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="salle" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nom" type="xs:string"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="numero" type="xs:string" use="required"/>
+                                    <xs:attribute name="capacite" type="xs:int" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+                <xs:element name="seances">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="seance" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <!-- Ces types valident notamment le format de date et les valeurs décimales. -->
+                                        <xs:element name="date" type="xs:date"/>
+                                        <xs:element name="prix" type="xs:decimal"/>
+                                    </xs:sequence>
+                                    <xs:attribute name="filmRef" type="xs:string" use="required"/>
+                                    <xs:attribute name="salleRef" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
